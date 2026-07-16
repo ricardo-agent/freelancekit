@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Free Freelance Invoice Generator — FreelanceKit</title><meta name="description" content="Free freelance invoice generator. Fill in the work, get a clean invoice to print or save as PDF. No signup, nothing leaves your browser."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#f5f7f5;--surface:#fff;--ink:#151a17;--body:#4a544c;--muted:#6b756d;--line:#e2e7e2;--line2:#d3dad3;--accent:#15803d;--accent-ink:#0f5c2e;--accent-soft:#e7f3ec;--ease:cubic-bezier(.22,1,.36,1);--disp:'Space Grotesk',system-ui,sans-serif;--sans:-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--body);font-family:var(--sans);line-height:1.55;font-size:15px}
+nav{border-bottom:1px solid var(--line)}.nav{max-width:960px;margin:0 auto;padding:0 22px;height:56px;display:flex;align-items:center}
+.brand{font-family:var(--disp);font-weight:700;color:var(--ink);text-decoration:none;font-size:16px;display:flex;align-items:center;gap:8px;transition:color .2s var(--ease)}
+@media(hover:hover){.brand:hover{color:var(--accent)}}
+.w{max-width:960px;margin:0 auto;padding:28px 22px 48px}
+h1{font-family:var(--disp);font-size:clamp(24px,4vw,32px);font-weight:700;color:var(--ink);letter-spacing:-.02em}h1 span{color:var(--accent)}
+.s{color:var(--body);margin:8px 0 24px;font-size:16px;max-width:62ch}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:740px){.g{grid-template-columns:1fr}}
+.c{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+label{display:block;font-family:var(--disp);font-size:12px;font-weight:600;color:var(--muted);margin:12px 0 4px}
+input,textarea{width:100%;background:#fff;border:1px solid var(--line2);border-radius:9px;color:var(--ink);padding:9px 10px;font:inherit;font-size:14px;transition:border-color .15s var(--ease),box-shadow .15s var(--ease)}
+input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.r{display:flex;gap:8px}.r>div{flex:1}
+button{cursor:pointer;border:none;border-radius:9px;font-weight:600;font-family:var(--sans);padding:10px;transition:transform .16s var(--ease),background .2s var(--ease),border-color .2s var(--ease)}
+button:active{transform:scale(.98)}
+.add{background:var(--surface);color:var(--ink);border:1px solid var(--line2);margin-top:8px;font-size:13px}
+@media(hover:hover){.add:hover{border-color:var(--accent)}}
+.gen{background:var(--accent);color:#fff;width:100%;margin-top:14px;font-size:15px;font-weight:700}
+@media(hover:hover){.gen:hover{background:var(--accent-ink)}}
+.it{display:grid;grid-template-columns:2fr .7fr 1fr auto;gap:6px;margin-bottom:6px}.it input{padding:7px;font-size:13px}
+.del{background:#fef2f2;color:#dc2626;border:1px solid #fecaca;border-radius:8px;padding:0 10px;cursor:pointer}
+#inv{background:#fff;color:#1a2230;border:1px solid var(--line);border-radius:14px;padding:26px;font-size:14px}
+#inv h2{font-family:var(--disp);color:var(--ink)}
+#inv table{width:100%;border-collapse:collapse;margin:14px 0}
+#inv th{text-align:left;font-size:11px;text-transform:uppercase;color:#667085;border-bottom:2px solid #e4e7ec;padding:7px 3px}
+#inv td{padding:8px 3px;border-bottom:1px solid #eef0f3}
+#inv .r2{text-align:right}
+#inv .tot{display:flex;justify-content:flex-end;gap:34px;font-size:17px;font-weight:800;margin-top:8px}
+.act{display:flex;gap:8px;margin-top:12px}.act button{flex:1;background:var(--surface);color:var(--ink);border:1px solid var(--line2)}
+@media(hover:hover){.act button:hover{border-color:var(--ink)}}
+.tools-nav{margin-top:24px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.tools-nav>p{font-family:var(--disp);font-weight:600;color:var(--muted);font-size:13px;margin-bottom:10px}
+.lk{display:flex;flex-wrap:wrap;gap:8px}
+.lk a{color:var(--ink);background:var(--bg);border:1px solid var(--line2);border-radius:9px;padding:7px 12px;text-decoration:none;font-size:13px;font-weight:600;transition:border-color .2s var(--ease)}
+@media(hover:hover){.lk a:hover{border-color:var(--accent)}}
+.cta{margin-top:16px;background:var(--ink);color:#e9efe9;border-radius:16px;padding:26px;text-align:center}
+.cta .t{font-family:var(--disp);font-weight:700;color:#fff;font-size:19px;margin-bottom:6px}
+.cta>p{color:#b7c2b8;font-size:14px;margin:0 auto 14px;max-width:54ch}
+.cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:12px 24px;border-radius:11px;transition:transform .16s var(--ease),background .2s var(--ease)}
+@media(hover:hover){.cta a:hover{background:#1a9247}}.cta a:active{transform:scale(.97)}
+@media print{body *{visibility:hidden}#inv,#inv *{visibility:visible}#inv{position:absolute;left:0;top:0;width:100%;border:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}button:active,.cta a:active{transform:none}}
+</style></head><body><nav><div class="nav"><a class="brand" href="/">← FreelanceKit</a></div></nav><div class="w"><h1>Free <span>Invoice</span> Generator</h1><p class="s">Fill it in, generate a clean invoice, print or save as PDF. No signup, nothing leaves your browser.</p><div class="g"><div class="c"><div class="r"><div><label>Your name / business</label><input id="from" value="Jane Doe Design"></div><div><label>Invoice #</label><input id="num" value="0001"></div></div><label>Bill to</label><input id="to" value="Acme Corp"><div class="r"><div><label>Date</label><input id="date" type="date"></div><div><label>Due (days)</label><input id="due" value="15"></div></div><label>Line items</label><div id="items"></div><button class="add" onclick="add()">+ Add line</button><div class="r" style="margin-top:8px"><div><label>Tax %</label><input id="tax" value="0"></div><div><label>Currency</label><input id="cur" value="$"></div></div><label>Notes</label><textarea id="notes">Payment via bank transfer. Thank you!</textarea><button class="gen" onclick="gen()">Generate invoice</button></div><div><div id="inv"><p style="color:#667085">Your invoice preview appears here.</p></div><div class="act"><button onclick="print()">Print / Save PDF</button></div></div></div><div class="tools-nav"><p>More free freelance tools — no signup</p><div class="lk"><a href="/rate/">🧮 Rate calculator</a><a href="/contract/">📋 Contract red-flag checker</a><a href="/proposal/">📝 Proposal generator</a></div></div><div class="cta"><div class="t">Want this without the form?</div><p>This is one of 7 Claude Code skills for freelancers — describe the work and /invoice writes it inside Claude Code. Proposals, contract red-flags, cold outreach and more in the pack.</p><a href="https://agentia11.gumroad.com/l/dukuod">Get the Freelancer Pack — $27</a></div></div><script>
+var rows=[["Website homepage redesign","12","75"],["Hosting setup","1","40"]];
+function render(){var c=document.getElementById('items');c.innerHTML='';rows.forEach(function(r,i){var d=document.createElement('div');d.className='it';d.innerHTML='<input value="'+r[0].replace(/"/g,'&quot;')+'" oninput="rows['+i+'][0]=this.value"><input value="'+r[1]+'" oninput="rows['+i+'][1]=this.value"><input value="'+r[2]+'" oninput="rows['+i+'][2]=this.value"><button class=del onclick="rows.splice('+i+',1);render()">x</button>';c.appendChild(d)})}
+function add(){rows.push(["","",""]);render()}
+function m(n,c){return c+n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function v(id){return document.getElementById(id).value}
+function gen(){var cur=v('cur')||'$',tax=parseFloat(v('tax'))||0,date=v('date')||new Date().toISOString().slice(0,10),due=parseInt(v('due'))||0;var dd=new Date(new Date(date).getTime()+due*864e5).toISOString().slice(0,10);var sub=0,b='';rows.forEach(function(r){var q=parseFloat(r[1])||0,rt=parseFloat(r[2])||0,a=q*rt;if(r[0]||a){sub+=a;b+='<tr><td>'+esc(r[0])+'</td><td class=r2>'+(q||'')+'</td><td class=r2>'+(rt?m(rt,cur):'')+'</td><td class=r2>'+m(a,cur)+'</td></tr>'}});var tx=sub*tax/100,tot=sub+tx;var h='<h2>Invoice #'+esc(v('num'))+'</h2><div style="color:#667085">Issued '+date+' - Due '+dd+'</div><div style="display:flex;justify-content:space-between;margin-top:12px"><div><b>From</b><br>'+esc(v('from'))+'</div><div><b>Bill to</b><br>'+esc(v('to'))+'</div></div><table><tr><th>Description</th><th class=r2>Qty</th><th class=r2>Rate</th><th class=r2>Amount</th></tr>'+b+'</table><div class="tot"><div>'+(tax?'Subtotal':'Total')+'</div><div>'+m(sub,cur)+'</div></div>';if(tax){h+='<div class="tot" style="font-size:14px;font-weight:600"><div>Tax ('+tax+'%)</div><div>'+m(tx,cur)+'</div></div><div class="tot"><div>Total due</div><div>'+m(tot,cur)+'</div></div>'}var nt=v('notes');if(nt)h+='<p style="margin-top:14px;color:#667085">'+esc(nt)+'</p>';document.getElementById('inv').innerHTML=h}
+document.getElementById('date').value=new Date().toISOString().slice(0,10);render();gen();
+</script></body></html>
