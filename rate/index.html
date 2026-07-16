@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Free Freelance Rate Calculator — FreelanceKit</title><meta name="description" content="Free freelance hourly rate calculator. Enter your target income, costs, and real billable hours to get the rate you should actually charge. No signup."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#f5f7f5;--surface:#fff;--ink:#151a17;--body:#4a544c;--muted:#6b756d;--line:#e2e7e2;--line2:#d3dad3;--accent:#15803d;--accent-ink:#0f5c2e;--accent-soft:#e7f3ec;--ease:cubic-bezier(.22,1,.36,1);--disp:'Space Grotesk',system-ui,sans-serif;--sans:-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--body);font-family:var(--sans);line-height:1.55;font-size:15px}
+nav{border-bottom:1px solid var(--line)}.nav{max-width:680px;margin:0 auto;padding:0 22px;height:56px;display:flex;align-items:center}
+.brand{font-family:var(--disp);font-weight:700;color:var(--ink);text-decoration:none;font-size:16px;display:flex;align-items:center;gap:8px;transition:color .2s var(--ease)}
+@media(hover:hover){.brand:hover{color:var(--accent)}}
+.w{max-width:680px;margin:0 auto;padding:28px 22px 48px}
+h1{font-family:var(--disp);font-size:clamp(24px,4vw,32px);font-weight:700;color:var(--ink);letter-spacing:-.02em}h1 span{color:var(--accent)}
+.s{color:var(--body);margin:8px 0 24px;font-size:16px;max-width:60ch}
+.c{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+label{display:block;font-family:var(--disp);font-size:13px;font-weight:600;color:var(--ink);margin:14px 0 3px}
+.h{font-size:12px;color:var(--muted);margin-bottom:3px}
+input{width:100%;background:#fff;border:1px solid var(--line2);border-radius:9px;color:var(--ink);padding:10px;font:inherit;font-size:15px;transition:border-color .15s var(--ease),box-shadow .15s var(--ease)}
+input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.out{margin-top:22px;background:var(--accent-soft);border:1px solid #bfe6cd;border-radius:14px;padding:24px;text-align:center}
+.big{font-family:var(--disp);font-size:clamp(38px,9vw,48px);font-weight:700;color:var(--accent-ink);letter-spacing:-.02em;line-height:1}
+.lbl{color:var(--body);font-size:14px;font-family:var(--disp);font-weight:600;margin-bottom:4px}
+.brk{margin-top:16px;font-size:13px;color:var(--body);text-align:left}.brk div{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #d6ecdd}
+.tools-nav{margin-top:24px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.tools-nav>p{font-family:var(--disp);font-weight:600;color:var(--muted);font-size:13px;margin-bottom:10px}
+.lk{display:flex;flex-wrap:wrap;gap:8px}
+.lk a{color:var(--ink);background:var(--bg);border:1px solid var(--line2);border-radius:9px;padding:7px 12px;text-decoration:none;font-size:13px;font-weight:600;transition:border-color .2s var(--ease)}
+@media(hover:hover){.lk a:hover{border-color:var(--accent)}}
+.cta{margin-top:16px;background:var(--ink);color:#e9efe9;border-radius:16px;padding:26px;text-align:center}
+.cta .t{font-family:var(--disp);font-weight:700;color:#fff;font-size:19px;margin-bottom:6px}
+.cta>p{color:#b7c2b8;font-size:14px;margin:0 auto 14px;max-width:54ch}
+.cta a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:12px 24px;border-radius:11px;transition:transform .16s var(--ease),background .2s var(--ease)}
+@media(hover:hover){.cta a:hover{background:#1a9247}}.cta a:active{transform:scale(.97)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}.cta a:active{transform:none}}
+</style></head><body><nav><div class="nav"><a class="brand" href="/">← FreelanceKit</a></div></nav><div class="w"><h1>Free <span>Rate</span> Calculator</h1><p class="s">Stop guessing. Enter three numbers and get the hourly rate you should actually charge to fund your life.</p><div class="c"><label>Target annual take-home income</label><div class="h">What you actually need + want, per year.</div><input id="income" type="number" value="60000" oninput="calc()"><label>Annual business costs + tax set-aside</label><div class="h">Software, insurance, retirement, and the big one: tax (often 25-35% of income).</div><input id="costs" type="number" value="25000" oninput="calc()"><label>Billable hours per year</label><div class="h">Not 2080. After holidays, admin, sales and sick days, most solos bill ~1000-1200.</div><input id="hours" type="number" value="1100" oninput="calc()"><div class="out"><div class="lbl">Your minimum hourly rate</div><div class="big" id="rate">$0</div><div class="brk" id="brk"></div></div></div><div class="tools-nav"><p>More free freelance tools — no signup</p><div class="lk"><a href="/invoice/">🧾 Invoice generator</a><a href="/contract/">📋 Contract red-flag checker</a><a href="/proposal/">📝 Proposal generator</a></div></div><div class="cta"><div class="t">Want this run for you, every time?</div><p>/setrate is one of 7 Claude Code skills for freelancers — give it a target income and it shows the whole calculation. Invoicing, proposals, contract red-flags and more in the pack.</p><a href="https://agentia11.gumroad.com/l/dukuod">Get the Freelancer Pack — $27</a></div></div><script>
+function m(n){return '$'+Math.round(n).toLocaleString()}
+function calc(){var inc=parseFloat(document.getElementById('income').value)||0;var co=parseFloat(document.getElementById('costs').value)||0;var hr=parseFloat(document.getElementById('hours').value)||0;var num=inc+co;var rate=hr>0?num/hr:0;document.getElementById('rate').textContent=hr>0?m(rate)+'/hr':'--';var proj=rate*8;document.getElementById('brk').innerHTML='<div><span>Income + costs to cover</span><span>'+m(num)+'</span></div><div><span>Billable hours/year</span><span>'+Math.round(hr)+'</span></div><div><span>= Hourly floor</span><span>'+m(rate)+'</span></div><div><span>Rough day rate (8h)</span><span>'+m(proj)+'</span></div>'}
+calc();
+</script></body></html>
