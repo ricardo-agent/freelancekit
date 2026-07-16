@@ -1,47 +1,141 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FreelanceKit — Free tools for the freelance admin grind</title><meta name="description" content="Free, no-signup web tools for the boring half of freelancing: invoices, rates, contracts and proposals. Nothing leaves your browser. Built by a freelancer, for freelancers."><meta property="og:title" content="FreelanceKit — Free freelance admin tools"><meta property="og:description" content="Invoices, rate math, contract red-flags and proposals. Free, no signup."><style>
-*{box-sizing:border-box;margin:0;padding:0}:root{--bg:#0b1120;--card:#111c2e;--line:#22304a;--ink:#e6edf6;--dim:#9fb0c3;--faint:#6b7c91;--acc:#5eead4;--ease:cubic-bezier(.23,1,.32,1)}
-body{background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
-.w{max-width:900px;margin:0 auto;padding:0 22px}
-header{padding:60px 0 40px;text-align:center}
-.badge{display:inline-block;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--acc);font-weight:700;border:1px solid var(--line);border-radius:20px;padding:5px 14px;margin-bottom:22px}
-h1{font-size:clamp(30px,6vw,46px);font-weight:800;letter-spacing:-1px;line-height:1.08}h1 span{color:var(--acc)}
-.sub{color:var(--dim);font-size:clamp(15px,2.4vw,18px);max-width:560px;margin:16px auto 0}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0 40px}@media(max-width:640px){.grid{grid-template-columns:1fr}}
-.tool{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;text-decoration:none;color:inherit;transition:border-color .2s var(--ease),transform .2s var(--ease);opacity:0;transform:translateY(10px);animation:rise .5s var(--ease) forwards}
-.tool:nth-child(1){animation-delay:.05s}.tool:nth-child(2){animation-delay:.11s}.tool:nth-child(3){animation-delay:.17s}.tool:nth-child(4){animation-delay:.23s}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FreelanceKit — Do the freelance paperwork in minutes, not evenings</title>
+<meta name="description" content="Free browser tools for the boring half of freelancing — invoices, rate math, contract red-flags and proposals. No signup, nothing leaves your browser. Plus a Claude Code pack that does it all from a plain-English brief.">
+<meta property="og:title" content="FreelanceKit — free tools for the freelance admin grind">
+<meta property="og:description" content="Invoices, rates, contracts and proposals. Free, no signup, nothing leaves your browser.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#f5f7f5;--surface:#ffffff;--ink:#151a17;--body:#4a544c;--muted:#6b756d;
+--line:#e2e7e2;--line2:#d3dad3;--accent:#15803d;--accent-ink:#0f5c2e;--accent-soft:#e7f3ec;
+--ease:cubic-bezier(.22,1,.36,1);--maxw:1080px;
+--disp:'Space Grotesk',system-ui,sans-serif;
+--sans:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--body);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.w{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--disp);color:var(--ink);font-weight:700;letter-spacing:-.02em;line-height:1.05;text-wrap:balance}
+a{color:inherit}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{font-family:var(--disp);font-weight:700;font-size:19px;color:var(--ink);letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:9px}
+.brand .dot{width:11px;height:11px;border-radius:3px;background:var(--accent);display:inline-block}
+.nav .cta-sm{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;padding:8px 15px;border:1px solid var(--line2);border-radius:9px;transition:border-color .2s var(--ease),background .2s var(--ease)}
+@media(hover:hover){.nav .cta-sm:hover{border-color:var(--accent);background:var(--accent-soft)}}
+.nav .cta-sm:active{transform:scale(.97)}
+/* hero */
+.hero{padding:76px 0 30px;max-width:760px}
+.hero h1{font-size:clamp(36px,6vw,60px)}
+.hero .lead{font-size:clamp(17px,2.4vw,21px);color:var(--body);margin-top:22px;max-width:60ch}
+.hero .lead b{color:var(--ink);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{font-family:var(--sans);font-weight:600;font-size:16px;text-decoration:none;padding:13px 24px;border-radius:11px;display:inline-flex;align-items:center;gap:8px;transition:transform .16s var(--ease),background .2s var(--ease),box-shadow .2s var(--ease)}
+.btn-p{background:var(--accent);color:#fff;box-shadow:0 1px 0 var(--accent-ink)}
+@media(hover:hover){.btn-p:hover{background:var(--accent-ink)}}
+.btn-p:active{transform:scale(.975)}
+.btn-s{background:var(--surface);color:var(--ink);border:1px solid var(--line2)}
+@media(hover:hover){.btn-s:hover{border-color:var(--ink)}}
+.btn-s:active{transform:scale(.975)}
+.trust{margin-top:22px;font-size:14.5px;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.trust svg{flex:none}
+/* section head */
+.sec{padding:56px 0}
+.sec-h{font-size:clamp(24px,3.5vw,34px);max-width:22ch}
+.sec-sub{color:var(--body);margin-top:10px;max-width:56ch}
+/* tools */
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+@media(max-width:680px){.tools{grid-template-columns:1fr}}
+.tool{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;text-decoration:none;color:inherit;transition:border-color .22s var(--ease),transform .22s var(--ease)}
+.tool .ic{font-size:24px;line-height:1}
+.tool h3{font-size:19px;margin:14px 0 6px}
+.tool p{font-size:15px;color:var(--body);line-height:1.5}
+.tool .go{margin-top:16px;font-family:var(--disp);font-weight:600;font-size:14px;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+.tool .go .ar{transition:transform .22s var(--ease)}
+@media(hover:hover){.tool:hover{border-color:var(--accent);transform:translateY(-3px)}.tool:hover .go .ar{transform:translateX(4px)}}
+.tool:active{transform:scale(.99);transition-duration:110ms}
+/* pack */
+.pack{background:var(--ink);color:#e9efe9;border-radius:20px;padding:clamp(28px,5vw,52px);margin-top:12px;display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,4vw,48px);align-items:center}
+@media(max-width:760px){.pack{grid-template-columns:1fr}}
+.pack h2{color:#fff;font-size:clamp(24px,3.4vw,34px)}
+.pack p{color:#b7c2b8;margin-top:14px;font-size:16px;line-height:1.6}
+.pack .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.pack .skill{font-family:var(--disp);font-size:13px;color:#9fe3b6;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:5px 11px}
+.buy{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px;text-align:center}
+.buy .price{font-family:var(--disp);font-weight:700;color:#fff;font-size:44px;letter-spacing:-.02em;line-height:1}
+.buy .price small{font-size:16px;color:#93a094;font-weight:500}
+.buy .once{color:#93a094;font-size:13px;margin-top:4px}
+.buy a{display:block;background:var(--accent);color:#fff;font-family:var(--sans);font-weight:700;text-decoration:none;padding:14px;border-radius:11px;margin-top:18px;transition:transform .16s var(--ease),background .2s var(--ease)}
+@media(hover:hover){.buy a:hover{background:#1a9247}}
+.buy a:active{transform:scale(.97)}
+.buy .guar{color:#93a094;font-size:12.5px;margin-top:12px}
+/* why */
+.why{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media(max-width:680px){.why-grid{grid-template-columns:1fr;gap:20px}}
+.why h4{font-family:var(--disp);color:var(--ink);font-size:16px;font-weight:600;margin-bottom:6px}
+.why p{font-size:14.5px;color:var(--body)}
+/* footer */
+footer{padding:40px 0 64px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:var(--body);text-decoration:none}
+@media(hover:hover){footer a:hover{color:var(--ink)}}
+/* motion */
+.rise{opacity:0;transform:translateY(12px);animation:rise .6s var(--ease) forwards}
+.d1{animation-delay:.05s}.d2{animation-delay:.12s}.d3{animation-delay:.19s}.d4{animation-delay:.26s}
 @keyframes rise{to{opacity:1;transform:translateY(0)}}
-@media(hover:hover)and(pointer:fine){.tool:hover{border-color:var(--acc);transform:translateY(-4px)}}
-.tool:active{transform:scale(.985);transition-duration:110ms}
-.tool .ic{font-size:26px}.tool h3{font-size:18px;font-weight:700;margin:10px 0 5px}.tool p{color:var(--dim);font-size:14px}
-.tool .go{color:var(--acc);font-size:13px;font-weight:700;margin-top:12px;display:inline-block}
-.pack{background:linear-gradient(180deg,#12203a,#0e1a30);border:1px solid var(--line);border-radius:16px;padding:32px;text-align:center;margin-bottom:40px}
-.pack h2{font-size:24px;font-weight:800}.pack p{color:var(--dim);margin:8px auto 18px;max-width:520px}
-.pack a{display:inline-block;background:var(--acc);color:#08211d;font-weight:800;text-decoration:none;padding:12px 26px;border-radius:10px;transition:transform .16s var(--ease),filter .16s var(--ease)}
-@media(hover:hover){.pack a:hover{filter:brightness(1.06)}}
-.pack a:active{transform:scale(.97)}
-.pills{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:16px}
-.pill{font-family:'Cascadia Code',Consolas,monospace;font-size:12px;color:var(--acc);background:#0d1526;border:1px solid var(--line);border-radius:7px;padding:4px 10px}
-footer{border-top:1px solid var(--line);padding:26px 0 50px;text-align:center;color:var(--faint);font-size:13px}
-header h1{opacity:0;transform:translateY(8px);animation:rise .55s var(--ease) forwards}
-.sub{opacity:0;transform:translateY(8px);animation:rise .55s var(--ease) .09s forwards}
-@media(prefers-reduced-motion:reduce){.tool,header h1,.sub{animation:none;opacity:1;transform:none}.tool:active,.pack a:active{transform:none}}
-</style></head><body><div class="w">
-<header>
-<div class="badge">Free · No signup</div>
-<h1>The boring half of freelancing,<br><span>handled</span></h1>
-<p class="sub">Free web tools for the admin work you didn't start freelancing to do. Nothing leaves your browser — no login, no email wall.</p>
+@media(prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}*{scroll-behavior:auto!important}.btn:active,.tool:active,.buy a:active,.nav .cta-sm:active{transform:none}}
+</style></head><body>
+<nav><div class="w nav"><a class="brand" href="/"><span class="dot"></span>FreelanceKit</a><a class="cta-sm" href="https://agentia11.gumroad.com/l/dukuod">Get the pack →</a></div></nav>
+
+<header class="w hero">
+<h1 class="rise">Do the freelance paperwork in minutes, not evenings.</h1>
+<p class="lead rise d1">Free browser tools for the boring half of freelancing — <b>invoices, rate math, contract red-flags and proposals.</b> No signup. Nothing ever leaves your browser.</p>
+<div class="actions rise d2">
+<a class="btn btn-p" href="#tools">Try a free tool</a>
+<a class="btn btn-s" href="#pack">See the pack</a>
+</div>
+<div class="trust rise d3">
+<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z"/></svg>
+Built by a freelancer · runs 100% in your browser · no login, no email, no data collected
+</div>
 </header>
-<div class="grid">
-<a class="tool" href="https://ricardo-agent.github.io/free-invoice-generator/"><div class="ic">🧾</div><h3>Invoice Generator</h3><p>Describe the work, get a clean invoice to print or save as PDF.</p><span class="go">Open →</span></a>
-<a class="tool" href="https://ricardo-agent.github.io/freelance-rate-calculator/"><div class="ic">🧮</div><h3>Rate Calculator</h3><p>The 3-number math most freelancers get wrong — find your real hourly floor.</p><span class="go">Open →</span></a>
-<a class="tool" href="https://ricardo-agent.github.io/free-contract-checker/"><div class="ic">📋</div><h3>Contract Red-Flag Checker</h3><p>Paste a contract or SOW, get the risky clauses flagged before you sign.</p><span class="go">Open →</span></a>
-<a class="tool" href="https://ricardo-agent.github.io/free-proposal-generator/"><div class="ic">📝</div><h3>Proposal Generator</h3><p>Turn a brief into a client-ready proposal built to win the work.</p><span class="go">Open →</span></a>
+
+<section class="w sec" id="tools">
+<h2 class="sec-h">Four free tools for the work you didn't sign up to do.</h2>
+<p class="sec-sub">Each one runs entirely in your browser. Open it, use it, done — no account, nothing uploaded.</p>
+<div class="tools">
+<a class="tool rise d1" href="https://ricardo-agent.github.io/free-invoice-generator/"><span class="ic">🧾</span><h3>Invoice Generator</h3><p>Describe the work, get a clean, client-ready invoice you can print or save as PDF.</p><span class="go">Open<span class="ar">→</span></span></a>
+<a class="tool rise d2" href="https://ricardo-agent.github.io/freelance-rate-calculator/"><span class="ic">🧮</span><h3>Rate Calculator</h3><p>The three-number math most freelancers get wrong. Find the hourly floor that actually funds your life.</p><span class="go">Open<span class="ar">→</span></span></a>
+<a class="tool rise d3" href="https://ricardo-agent.github.io/free-contract-checker/"><span class="ic">📋</span><h3>Contract Red-Flag Checker</h3><p>Paste a contract or SOW. Get the risky clauses flagged in plain English before you sign.</p><span class="go">Open<span class="ar">→</span></span></a>
+<a class="tool rise d4" href="https://ricardo-agent.github.io/free-proposal-generator/"><span class="ic">📝</span><h3>Proposal Generator</h3><p>Turn a brief into a client-ready proposal — outcome-framed, with anchored pricing built to win.</p><span class="go">Open<span class="ar">→</span></span></a>
 </div>
+</section>
+
+<section class="w sec" id="pack">
 <div class="pack">
-<h2>Want these run <em>for</em> you, inside Claude Code?</h2>
-<p>These tools are the free taste. The <strong>Claude Code Freelancer Pack</strong> is 7 skills that do the whole admin grind from a plain-English brief — invoicing, proposals, contract red-lining, cold outreach, scope-creep replies, meeting notes and rate math.</p>
-<a href="https://agentia11.gumroad.com/l/dukuod">Get the Freelancer Pack — $27</a>
-<div class="pills"><span class="pill">/invoice</span><span class="pill">/proposal</span><span class="pill">/meeting</span><span class="pill">/redline</span><span class="pill">/outreach</span><span class="pill">/scopecheck</span><span class="pill">/setrate</span></div>
+<div>
+<h2>Or have all of it done <em>for</em> you, inside Claude Code.</h2>
+<p>The free tools are the taste. The <b style="color:#fff">Claude Code Freelancer Pack</b> is 7 skills that handle the whole admin grind from a plain-English brief — you describe it, the skill writes it. Invoices, proposals, contract red-lining, cold outreach, scope-creep replies, meeting notes, and rate math.</p>
+<div class="skills"><span class="skill">/invoice</span><span class="skill">/proposal</span><span class="skill">/meeting</span><span class="skill">/redline</span><span class="skill">/outreach</span><span class="skill">/scopecheck</span><span class="skill">/setrate</span></div>
 </div>
-<footer>FreelanceKit — built by a freelancer, for freelancers. Every tool runs entirely in your browser.</footer>
-</div></body></html>
+<div class="buy">
+<div class="price">$27<small> once</small></div>
+<div class="once">7 skills · no subscription</div>
+<a href="https://agentia11.gumroad.com/l/dukuod">Get the Freelancer Pack</a>
+<div class="guar">30-day money-back guarantee</div>
+</div>
+</div>
+</section>
+
+<section class="why"><div class="w why-grid">
+<div><h4>Nothing leaves your browser</h4><p>Every free tool runs client-side. No uploads, no accounts, no tracking pixels. Your client data stays on your machine.</p></div>
+<div><h4>Built by a freelancer</h4><p>These are the exact things that used to eat my evenings — invoices at 11pm, guessing rates, re-reading contracts. So I turned them into tools.</p></div>
+<div><h4>Free stays free</h4><p>The four tools above are free, forever, no email wall. The pack is there if you'd rather have all of it written for you.</p></div>
+</div></section>
+
+<footer class="w"><span>FreelanceKit — free tools for the freelance admin grind.</span><a href="https://agentia11.gumroad.com/l/dukuod">Get the Claude Code Freelancer Pack →</a></footer>
+</body></html>
