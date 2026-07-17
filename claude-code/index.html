@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude Code Skills for Freelancers — Invoices, Proposals, Contracts | FreelanceKit</title>
+<meta name="description" content="Claude Code skills that handle the freelance admin grind — invoices, proposals, contract reviews, outreach, rate math — from a plain-English command. Free /invoice skill included, no API keys, nothing leaves your machine.">
+<link rel="canonical" href="https://freelancekit.tools/claude-code/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Claude Code skills for freelancers">
+<meta property="og:description" content="Invoices, proposals, contracts and more — done from a plain-English command inside Claude Code. Free /invoice skill included.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7f5;--surface:#fff;--ink:#151a17;--body:#3a4139;--muted:#6b756d;--line:#e2e7e2;--line2:#d3dad3;--accent:#15803d;--accent-ink:#0f5c2e;--accent-soft:#e7f3ec;--ease:cubic-bezier(.22,1,.36,1);--disp:'Space Grotesk',system-ui,sans-serif;--sans:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--body);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.w{max-width:900px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{font-family:var(--disp);font-weight:700;font-size:19px;color:var(--ink);letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:9px}
+.brand .dot{width:11px;height:11px;border-radius:3px;background:var(--accent)}
+.cta-sm{font-family:var(--sans);font-size:14px;font-weight:600;color:#fff;background:var(--accent);text-decoration:none;padding:9px 16px;border-radius:9px}
+.hero{padding:70px 0 24px;max-width:760px}
+.pill{display:inline-block;font-size:13.5px;font-weight:600;color:var(--accent);background:#dff0e6;border:1px solid #bfe6cd;padding:6px 13px;border-radius:999px;margin-bottom:20px}
+h1{font-family:var(--disp);font-size:clamp(34px,6vw,56px);font-weight:700;color:var(--ink);letter-spacing:-.03em;line-height:1.04}
+h1 .g{color:var(--accent)}
+.lead{font-size:clamp(17px,2.4vw,21px);color:var(--body);margin-top:20px;max-width:60ch}
+.lead b{color:var(--ink);font-weight:600}
+.install{margin:26px 0 8px;max-width:620px}
+.install .lbl{font-family:var(--disp);font-size:14px;font-weight:600;color:var(--accent-ink);margin-bottom:8px}
+.install code{font-family:var(--mono);font-size:14px;background:#12181a;color:#8fe3ac;padding:14px 16px;border-radius:10px;display:block;overflow-x:auto;white-space:nowrap}
+.install .n{font-size:14px;color:var(--muted);margin-top:9px}
+.sec{padding:44px 0 8px}
+.sec-h{font-family:var(--disp);font-size:clamp(24px,3.4vw,32px);font-weight:700;color:var(--ink);letter-spacing:-.02em}
+.sec-sub{color:var(--body);margin:10px 0 22px;max-width:60ch}
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.skills{grid-template-columns:1fr}}
+.sk{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:16px 18px}
+.sk .c{font-family:var(--mono);font-weight:600;font-size:16px;color:var(--accent)}
+.sk .free{font-family:var(--disp);font-size:10.5px;font-weight:600;color:#fff;background:var(--accent);padding:2px 7px;border-radius:5px;margin-left:7px;letter-spacing:.03em;vertical-align:middle}
+.sk p{font-size:14.5px;color:var(--body);margin-top:6px;line-height:1.45}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+@media(max-width:640px){.why{grid-template-columns:1fr}}
+.why div{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:16px 18px;font-size:15px}
+.why b{color:var(--ink);font-family:var(--disp)}
+.pack{background:var(--ink);color:#e9efe9;border-radius:18px;padding:34px;text-align:center;margin:40px 0}
+.pack h2{font-family:var(--disp);color:#fff;font-size:clamp(22px,3.4vw,30px);letter-spacing:-.02em}
+.pack p{color:#b7c2b8;font-size:15.5px;margin:12px auto 20px;max-width:56ch}
+.pack a{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-family:var(--sans)}
+.pack .g{color:#8fe3ac;font-size:13.5px;margin-top:14px}
+.faq{padding:20px 0 10px}
+.faq h3{font-family:var(--disp);font-size:17px;color:var(--ink);margin:20px 0 4px}
+.faq p{font-size:15.5px;color:var(--body);max-width:64ch}
+footer{border-top:1px solid var(--line);margin-top:36px;padding:26px 0 60px;color:var(--muted);font-size:14px}
+footer a{color:var(--body);text-decoration:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are Claude Code skills for freelancers?","acceptedAnswer":{"@type":"Answer","text":"They're skills that extend Claude Code to handle freelance admin — invoicing, proposals, contract review, outreach, scope checks, meeting notes and rate math — from a plain-English command. You describe the task in the terminal and the skill produces the finished deliverable, no separate app or context switch."}},{"@type":"Question","name":"How do I install the free invoice skill?","acceptedAnswer":{"@type":"Answer","text":"Run /plugin marketplace add ricardo-agent/freelancer-skills in Claude Code, then install the freelancekit plugin. The /invoice skill is free and self-contained — no API keys, no config, nothing leaves your machine."}},{"@type":"Question","name":"Do these skills send my data anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The skills are plain-text files that run locally inside Claude Code. There are no API keys and no external calls — your client data never leaves your machine."}}]}</script>
+</head><body>
+<nav><div class="w nav"><a class="brand" href="/"><span class="dot"></span>FreelanceKit</a><a class="cta-sm" href="https://agentia11.gumroad.com/l/dukuod">Get the pack →</a></div></nav>
+
+<header class="w hero">
+<span class="pill">for freelancers who use Claude Code</span>
+<h1>Claude Code skills for the <span class="g">freelance admin grind.</span></h1>
+<p class="lead">Invoices, proposals, contract reviews, cold outreach, rate math — done from a <b>plain-English command</b>, right in your terminal. No new app, no context switch. You describe the job; the skill writes it.</p>
+<div class="install">
+<div class="lbl">Install the free /invoice skill in one line:</div>
+<code>/plugin marketplace add ricardo-agent/freelancer-skills</code>
+<div class="n">Then just say <b>/invoice</b> and describe the work. No API keys, no config, nothing leaves your machine.</div>
+</div>
+</header>
+
+<section class="w sec">
+<h2 class="sec-h">One skill for each thing that used to cost you an evening.</h2>
+<p class="sec-sub">The free /invoice skill is the taste. The full pack adds six more — the whole admin half of freelancing, from a brief.</p>
+<div class="skills">
+<div class="sk"><span class="c">/invoice</span><span class="free">FREE</span><p>Work description → a clean, client-ready invoice (HTML to paste into an email + a Markdown copy).</p></div>
+<div class="sk"><span class="c">/proposal</span><p>Job post or call notes → a tight proposal built to win the work, with anchored pricing.</p></div>
+<div class="sk"><span class="c">/redline</span><p>A contract or SOW → the risky clauses flagged in plain English before you sign.</p></div>
+<div class="sk"><span class="c">/outreach</span><p>A prospect → a personalized 3-touch cold email / LinkedIn sequence.</p></div>
+<div class="sk"><span class="c">/meeting</span><p>Messy notes or a transcript → a summary + action-item table + a follow-up email.</p></div>
+<div class="sk"><span class="c">/scopecheck</span><p>A new client ask vs. your scope → a verdict and a ready-to-send reply.</p></div>
+<div class="sk"><span class="c">/setrate</span><p>A target income → your hourly rate or a project price, with the math shown.</p></div>
+<div class="sk" style="background:var(--accent-soft);border-color:#bfe6cd"><span class="c" style="color:var(--accent-ink)">no keys</span><p style="color:#14432a">Plain-text files you own forever. No subscription, no config, no data collected.</p></div>
+</div>
+</section>
+
+<section class="w sec">
+<h2 class="sec-h">Why a skill beats another app.</h2>
+<div class="why">
+<div><b>It's where you already work.</b> The admin happens in the terminal you're already in — no tab-switching to a SaaS dashboard, no re-entering the same client details.</div>
+<div><b>It encodes judgment, not just a form.</b> /redline knows which clauses are traps; /setrate shows the math; /invoice picks sensible defaults and asks only what's missing.</div>
+<div><b>Nothing leaves your machine.</b> No API keys, no external calls. Your client data stays local — a real difference from cloud freelance apps.</div>
+<div><b>You own it.</b> Plain-text skill files you can read, tweak, and keep forever. One-time, no subscription bleeding out of your account every month.</div>
+</div>
+</section>
+
+<div class="w"><div class="pack">
+<h2>Get all 7 skills — the Claude Code Freelancer Pack.</h2>
+<p>Start with the free /invoice skill. When it earns its keep, the full pack handles the rest of the admin grind from a plain-English brief. One-time $27, 30-day money-back guarantee.</p>
+<a href="https://agentia11.gumroad.com/l/dukuod">See the Freelancer Pack — $27</a>
+<div class="g">Instant download · works with the standard Claude Code plugin format</div>
+</div></div>
+
+<section class="w faq">
+<h2 class="sec-h">Questions</h2>
+<h3>What are these, exactly?</h3><p>Claude Code skills — plain-text files that teach Claude Code to handle a specific freelance admin task from a one-line command. Install them once and they run whenever you need them.</p>
+<h3>How do I install the free one?</h3><p>Run <code style="font-family:var(--mono);font-size:13.5px;background:#eef2ee;padding:2px 6px;border-radius:5px">/plugin marketplace add ricardo-agent/freelancer-skills</code> in Claude Code, then install the freelancekit plugin. The /invoice skill is free.</p>
+<h3>Not using Claude Code?</h3><p>The same tools run free in your browser — no signup, nothing uploaded: <a class="tool-link" style="color:var(--accent);font-weight:600" href="/">freelancekit.tools</a>.</p>
+</section>
+
+<footer><div class="w">FreelanceKit — free tools &amp; Claude Code skills for the freelance admin grind. · <a href="/">Home</a> · <a href="/blog/">Blog</a></div></footer>
+</body></html>
